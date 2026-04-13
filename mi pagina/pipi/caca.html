@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="menu-hamburguesa">
+        <button onclick="toggleMenu()" class="btn-hamburguesa" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="menuDesplegable" class="menu-desplegable">
+            <div class="menu-contenido">
+                <a href="#" onclick="mostrarInfo('que es este sitio'); cerrarMenu(); return false;">Qué es este sitio</a>
+                <a href="#" onclick="mostrarInfo('quien soy'); cerrarMenu(); return false;">Quién soy</a>
+                <a href="#" onclick="mostrarInfo('que quiero hacer'); cerrarMenu(); return false;">Qué quiero hacer</a>
+                <a href="#sugerencias" class="menu-sugerencias" onclick="cerrarMenu()">Dejar sugerencias</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Selecciona Información</h1>
+        <p class="intro-texto">
+            Este espacio cuenta un poco más sobre mí, sobre la razón por la que hice esta página y sobre las metas que me gustaría cumplir en el futuro. 
+            Puedes pulsar uno de los botones para ver cada sección y después abrir "mostrar más" para leer detalles extra.
+        </p>
+        
+        <div class="botones">
+            <button onclick="mostrarInfo('que es este sitio')">Qué es este sitio</button>
+            <button onclick="mostrarInfo('quien soy')">Quién soy</button>
+            <button onclick="mostrarInfo('que quiero hacer')">Qué quiero hacer</button>
+        </div>
+        
+        <div id="que es este sitio" class="info oculto">
+            <h2>Qué es este sitio</h2>
+            <p>
+                Este es un sitio web de entrenamiento que hice para practicar HTML, CSS y JavaScript. 
+                Me tomó varias horas construirlo, probarlo y cambiar detalles hasta que se viera como yo quería.
+            </p>
+            <p>
+                También me sirve como una forma de aprender haciendo proyectos reales, porque así entiendo mejor cómo funcionan 
+                los botones, los menús, los estilos y la organización de una página web.
+            </p>
+            <div class="info-extra oculto">
+                <h3>Mostrar más sobre este proyecto</h3>
+                <p>
+                    Lo que más me gusta de este sitio es que no solo es una práctica técnica, sino también una forma de expresar mis gustos. 
+                    Elegí un estilo visual llamativo, con una estética suave y divertida, para que no se viera como una página vacía o aburrida.
+                </p>
+                <p>
+                    A medida que siga aprendiendo, quiero usar esta misma página para añadir nuevas secciones, mejorar el diseño, 
+                    incluir formularios y hacer que todo sea más interactivo.
+                </p>
+            </div>
+            <button class="btn-mas-info" onclick="toggleExtraInfo(this)">Mostrar más</button>
+            <img src="https://i.pinimg.com/originals/c4/d3/3c/c4d33cf23ce7ab16756a8a329977447f.gif" alt="Kirby" class="gif-info">
+        </div>
+        
+        <div id="quien soy" class="info oculto">
+            <h2>Quién soy</h2>
+            <p>
+                Me llamo Daniel y me gustaría aprender a programar por hobby, porque la tecnología me parece muy interesante 
+                y siento curiosidad por saber cómo se crean las cosas que usamos en internet y en los dispositivos.
+            </p>
+            <p>
+                Me gusta ir descubriendo poco a poco cómo funciona el código y ver que, con práctica y paciencia, 
+                puedo construir páginas que antes no sabía hacer.
+            </p>
+            <div class="info-extra oculto">
+                <h3>Mostrar más sobre mí</h3>
+                <p>
+                    Estoy en una etapa en la que quiero explorar distintas áreas, aprender herramientas nuevas y mejorar cada vez más. 
+                    No solo me interesa que algo funcione, también me gusta que se vea bien y tenga un estilo propio.
+                </p>
+                <p>
+                    Para mí, programar puede ser una mezcla entre creatividad y lógica, y eso es una de las cosas que hace que me motive a seguir aprendiendo.
+                </p>
+            </div>
+            <button class="btn-mas-info" onclick="toggleExtraInfo(this)">Mostrar más</button>
+            <div class="name-tag-container">
+                <img src="https://cdn.nametagwizard.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/h/e/hello-my-name-is-dry-erase-reusable-name-tag.png" alt="Name Tag" class="name-tag-img">
+                <p class="name-tag-text graffiti">Daniel</p>
+            </div>
+        </div>
+        
+        <div id="que quiero hacer" class="info oculto">
+            <h2>Qué quiero hacer</h2>
+            <p>
+                Tengo 15 años, me gusta mucho la tecnología y me gustaría trabajar en un área relacionada con la mecánica 
+                o convertirme en ingeniero de circuitos electrónicos.
+            </p>
+            <p>
+                Me llama la atención entender cómo funcionan las máquinas, los sistemas electrónicos y todo lo que combina 
+                ideas técnicas con soluciones útiles para la vida real.
+            </p>
+            <div class="info-extra oculto">
+                <h3>Mostrar más sobre mis metas</h3>
+                <p>
+                    Quiero seguir aprendiendo sobre programación, electrónica y tecnología en general para descubrir cuál de esas ramas 
+                    me apasiona más y en cuál me gustaría especializarme en el futuro.
+                </p>
+                <p>
+                    Aunque todavía estoy empezando, me parece importante construir una base buena desde ahora, practicando con proyectos pequeños 
+                    y mejorando poco a poco en cada uno.
+                </p>
+            </div>
+            <button class="btn-mas-info" onclick="toggleExtraInfo(this)">Mostrar más</button>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiArPlxzbyW9nh5rHCBXU6kZXHQVWwbPEzDNmXojWM5Dt58M92Cy8PwJPJE878uW3t5B2Lry9dTueKhFNXLiy9aTQDyqWtEGJnA_gXV-0cpmGg51GIzOE5HuVy4UgJOdevuEzP0gne2NgE/s1600/programando.gif" alt="Programando" class="gif-info">
+        </div>
+
+        <section id="sugerencias" class="sugerencias">
+            <h2>Deja tu sugerencia</h2>
+            <p>
+                Si quieres dar una idea para mejorar esta página, puedes escribir una sugerencia aquí abajo.
+                Al pulsar en enviar, se abrirá tu aplicación de correo predeterminada con el mensaje listo para mandarse a mi Gmail.
+            </p>
+            <form class="form-sugerencias">
+                <input type="text" placeholder="Tu nombre (opcional)" aria-label="Tu nombre">
+                <textarea placeholder="Escribe aquí tu sugerencia..." aria-label="Escribe aquí tu sugerencia"></textarea>
+                <button type="submit">Enviar sugerencia</button>
+            </form>
+        </section>
+    </div>
+
+    <button id="btnVolverArriba" class="btn-volver-arriba" aria-label="Volver arriba" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer con redes sociales -->
+    <footer class="footer">
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.github.com" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>   
+</body>
+</html>

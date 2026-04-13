@@ -1,0 +1,582 @@
+/* Fondo con imagen de Kirby */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Arial', 'Verdana', sans-serif;
+    background-image: url('https://static.vecteezy.com/ti/vecteur-libre/p1/27389825-vecteur-illustration-de-mignonne-en-train-de-dormir-kirby-vectoriel.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+body > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Contenedor Frutiger Aero con Glassmorphism */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 760px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 12px 30px rgba(66, 80, 120, 0.10),
+        0 24px 60px rgba(100, 100, 100, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    flex: 1;
+    animation: slideInUp 0.8s ease-out;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.intro-texto {
+    color: #333;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.05em;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    animation: fadeIn 0.9s ease-out;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+button:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+button:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow:
+        0 8px 18px rgba(94, 110, 150, 0.10),
+        0 14px 30px rgba(100, 100, 100, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(20px);
+    animation: slideInDown 0.6s ease-out 0.2s both;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 14px 28px rgba(94, 110, 150, 0.14),
+        0 22px 40px rgba(100, 100, 100, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+button:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.info {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 24px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 10px 24px rgba(94, 110, 150, 0.08),
+        0 18px 42px rgba(100, 100, 100, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    animation: scaleIn 0.5s ease-out;
+    margin-bottom: 24px;
+}
+
+.info:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 14px 30px rgba(94, 110, 150, 0.12),
+        0 24px 48px rgba(100, 100, 100, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+}
+
+.oculto {
+    display: none;
+}
+
+.info h2 {
+    color: #222;
+    margin-top: 0;
+    font-size: 1.8em;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+    animation: slideInUp 0.6s ease-out 0.1s both;
+}
+
+.info h3 {
+    color: #222;
+    margin-top: 0;
+    font-size: 1.2em;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.info p {
+    color: #333;
+    line-height: 1.75;
+    font-size: 1.05em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    animation: slideInUp 0.6s ease-out 0.2s both;
+}
+
+.info-extra {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.btn-mas-info {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 10px 18px;
+}
+
+/* Estilo para GIFs en info */
+.gif-info {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 100, 100, 0.05);
+    animation: slideInUp 0.6s ease-out 0.2s both;
+    transition: all 0.4s ease;
+}
+
+.gif-info:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(100, 100, 100, 0.12);
+}
+
+/* Estilo para Name Tag */
+.name-tag-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(100, 150, 255, 0.1));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(100, 150, 255, 0.15));
+    }
+}
+
+.name-tag-img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 100, 100, 0.05);
+    animation: slideInUp 0.6s ease-out both;
+    transition: all 0.4s ease;
+}
+
+.name-tag-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(100, 100, 100, 0.12);
+}
+
+.name-tag-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
+    filter: drop-shadow(0 0 2px rgba(100, 100, 100, 0.1));
+}
+
+/* Estilo Graffiti para textos */
+.graffiti {
+    font-size: 52px !important;
+    font-weight: 900 !important;
+    color: #222 !important;
+    font-family: 'Impact', 'Arial Black', sans-serif !important;
+    text-shadow: 
+        3px 3px 0px rgba(200, 200, 200, 0.3),
+        6px 6px 0px rgba(180, 180, 180, 0.25),
+        9px 9px 0px rgba(150, 150, 150, 0.2),
+        12px 12px 5px rgba(100, 100, 100, 0.08) !important;
+    transform: translate(-50%, -50%) rotate(-2deg) !important;
+    letter-spacing: 2px !important;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.5));
+}
+
+/* Menú Hamburguesa */
+.menu-hamburguesa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.btn-hamburguesa {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #333;
+    font-size: 24px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 0 0 20px 0;
+    position: relative;
+    z-index: 101;
+    box-shadow:
+        0 8px 18px rgba(94, 110, 150, 0.10),
+        0 14px 30px rgba(100, 100, 100, 0.07);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-weight: bold;
+    backdrop-filter: blur(20px);
+    animation: slideInDown 0.6s ease-out;
+}
+
+.btn-hamburguesa:hover {
+    box-shadow:
+        0 12px 24px rgba(94, 110, 150, 0.14),
+        0 20px 38px rgba(100, 100, 100, 0.10);
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.btn-hamburguesa:active {
+    transform: scale(0.95);
+}
+
+/* Menú Desplegable */
+.menu-desplegable {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(320px, 78vw);
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    padding: 60px 0 10px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 8px 0 25px rgba(100, 100, 100, 0.06);
+    z-index: 99;
+    overflow-y: auto;
+    animation: slideInDown 0.5s ease-out;
+}
+
+.menu-desplegable.abierto {
+    display: flex;
+    flex-direction: column;
+    animation: slideInDown 0.4s ease-out;
+}
+
+.menu-contenido {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+}
+
+.menu-desplegable a {
+    display: block;
+    color: #333;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+    border-left: 3px solid transparent;
+}
+
+.menu-desplegable a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #333;
+    padding-left: 30px;
+    border-left-color: rgba(255, 255, 255, 0.6);
+    transform: translateX(5px);
+}
+
+.menu-sugerencias {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Sugerencias */
+.sugerencias {
+    background: rgba(255, 255, 255, 0.14);
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 10px 24px rgba(94, 110, 150, 0.08),
+        0 18px 42px rgba(100, 100, 100, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    animation: scaleIn 0.5s ease-out;
+}
+
+.sugerencias h2 {
+    margin-top: 0;
+    color: #222;
+}
+
+.sugerencias p {
+    color: #333;
+    line-height: 1.7;
+}
+
+.form-sugerencias {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.form-sugerencias input,
+.form-sugerencias textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    border-radius: 18px;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.form-sugerencias textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.form-sugerencias input:focus,
+.form-sugerencias textarea:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.form-sugerencias button {
+    align-self: flex-start;
+}
+
+/* Footer con Redes Sociales */
+.footer {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    text-align: center;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 -10px 30px rgba(94, 110, 150, 0.08);
+    animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a {
+    color: #333;
+    font-size: 30px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.redes-sociales a:hover {
+    color: #333;
+    transform: scale(1.4) rotate(15deg);
+    box-shadow:
+        0 12px 24px rgba(94, 110, 150, 0.14),
+        0 18px 36px rgba(100, 100, 100, 0.10);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.redes-sociales a:active {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.btn-volver-arriba {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 120;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.btn-volver-arriba:hover {
+    transform: translateY(-6px) scale(1.08);
+}
+
+.btn-volver-arriba:active {
+    transform: translateY(-2px) scale(0.96);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 70px 16px 30px;
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .botones button,
+    .form-sugerencias button {
+        width: 100%;
+    }
+
+    .name-tag-text {
+        font-size: 34px;
+    }
+
+    .graffiti {
+        font-size: 38px !important;
+    }
+
+    .menu-desplegable {
+        width: min(300px, 85vw);
+    }
+}
